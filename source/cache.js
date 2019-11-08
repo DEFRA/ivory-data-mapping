@@ -1,8 +1,12 @@
 const SyncRegistration = require('./sync-registration')
 const syncRegistration = new SyncRegistration()
-const Cache = require('ivory-shared/lib').Cache
 
-class ModelCache extends Cache {
+const cache = {
+  Cache: require('ivory-shared/lib').Cache
+}
+
+// Note that this is a bit of a fudge because inheriting from cache.Cache allows tests to mock the Cache class in the front end.
+class ModelCache extends cache.Cache {
   static async set (request, data, persistToDatabase = true) {
     await super.set(request, this.name, data)
     if (persistToDatabase) {
@@ -24,7 +28,7 @@ class Item extends ModelCache {}
 class Payment extends ModelCache {}
 class Photo extends ModelCache {}
 
-const cache = {
+Object.assign(cache, {
   Registration,
   Owner,
   OwnerAddress,
@@ -33,12 +37,15 @@ const cache = {
   Item,
   Payment,
   Photo
-}
+})
 
 const cacheClasses = Object.values(cache)
 
 cache.restore = async (request, id) => {
-  await Promise.all(cacheClasses.map((CacheClass) => CacheClass.set(request)))
+  await Promise.all(cacheClasses
+    .filter((CacheClass) => CacheClass !== cache.Cache)
+    .map((CacheClass) => CacheClass.set(request))
+  )
   await syncRegistration.restore(request, id)
 
   return (await Registration.get(request) || {})
