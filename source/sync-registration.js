@@ -1,4 +1,4 @@
-const { Persistence } = require('ivory-shared')
+const { Persistence } = require('ivory-shared/lib')
 const { logger } = require('defra-logging-facade')
 
 class SyncRegistration {

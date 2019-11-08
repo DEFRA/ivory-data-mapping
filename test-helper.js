@@ -2,7 +2,7 @@ const sinon = require('sinon')
 
 const { logger } = require('defra-logging-facade')
 const { Cache, utils } = require('ivory-shared')
-const SyncRegistration = require('./source/cache/sync-registration')
+const SyncRegistration = require('./source/sync-registration')
 
 // Suppress MaxListenersExceededWarning within tests
 require('events').EventEmitter.defaultMaxListeners = Infinity

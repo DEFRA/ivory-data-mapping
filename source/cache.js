@@ -1,6 +1,6 @@
 const SyncRegistration = require('./sync-registration')
 const syncRegistration = new SyncRegistration()
-const Cache = require('ivory-shared').Cache
+const Cache = require('ivory-shared/lib').Cache
 
 class ModelCache extends Cache {
   static async set (request, data, persistToDatabase = true) {
