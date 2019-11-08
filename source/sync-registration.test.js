@@ -11,7 +11,7 @@ lab.experiment(TestHelper.getFile(__filename), () => {
     // Stub methods
     context.sandbox = sinon.createSandbox()
     context.skip = { syncRegistration: true }
-    context.serviceApi = 'http://fake-service.co.uk'
+    SyncRegistration.serviceApi = 'http://fake-service.co.uk'
     context.syncRegistration = new SyncRegistration(context.serviceApi)
     TestHelper.stubCache(context)
     const { sandbox } = context

@@ -2,12 +2,12 @@ const { Persistence } = require('ivory-shared/lib')
 const { logger } = require('defra-logging-facade')
 
 class SyncRegistration {
-  constructor (serviceApi) {
+  static set serviceApi (serviceApi) {
     this._serviceApi = serviceApi
   }
 
   get serviceApi () {
-    return this._serviceApi
+    return this.constructor._serviceApi
   }
 
   get persistence () {
