@@ -3,7 +3,7 @@ const Code = require('@hapi/code')
 const lab = exports.lab = Lab.script()
 const sinon = require('sinon')
 const TestHelper = require('../test-helper')
-const { Persistence } = require('ivory-shared/lib')
+const { Persistence } = require('defra-hapi-utils')
 const SyncRegistration = require('./sync-registration')
 
 lab.experiment(TestHelper.getFile(__filename), () => {
