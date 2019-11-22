@@ -31,6 +31,6 @@
   "dependencies": {
     "@hapi/joi": "^15.1.1",
     "defra-logging-facade": "git+https://github.com/DEFRA/defra-logging-facade.git#master",
-    "ivory-shared": "git+https://github.com/DEFRA/ivory-shared.git#master"
+    "defra-hapi-utils": "git+https://github.com/DEFRA/defra-hapi-utils.git#master"
   }
 }

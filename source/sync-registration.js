@@ -1,4 +1,4 @@
-const { Persistence } = require('ivory-shared/lib')
+const { Persistence } = require('defra-hapi-utils')
 const { logger } = require('defra-logging-facade')
 
 class SyncRegistration {

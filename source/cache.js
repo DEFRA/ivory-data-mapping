@@ -2,7 +2,7 @@ const SyncRegistration = require('./sync-registration')
 const syncRegistration = new SyncRegistration()
 
 const cache = {
-  Cache: require('ivory-shared/lib').Cache
+  Cache: require('defra-hapi-utils').Cache
 }
 
 // Note that this is a bit of a fudge because inheriting from cache.Cache allows tests to mock the Cache class in the front end.
