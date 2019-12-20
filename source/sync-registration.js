@@ -11,7 +11,7 @@ class SyncRegistration {
   }
 
   get persistence () {
-    return new Persistence({ path: `${this.serviceApi}/full-registrations` })
+    return Persistence.createDAO({ path: `${this.serviceApi}/full-registrations` })
   }
 
   get cache () {
