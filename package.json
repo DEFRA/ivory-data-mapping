@@ -1,6 +1,6 @@
 {
   "name": "ivory-data-mapping",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Digital service to support the Ivory Act",
   "author": "Department for Environment, Food & Rural Affairs",
   "license": "SEE LICENSE IN LICENSE",
@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@hapi/joi": "^17.1.0",
-    "defra-hapi-utils": "git+https://github.com/DEFRA/defra-hapi-utils.git#v0.1.1",
+    "defra-hapi-utils": "git+https://github.com/DEFRA/defra-hapi-utils.git#v0.1.2",
     "defra-logging-facade": "git+https://github.com/DEFRA/defra-logging-facade.git#master"
   }
 }
